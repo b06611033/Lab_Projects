@@ -1,0 +1,60 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void on_redslider_valueChanged(int value);
+
+
+
+    void on_greenslider_valueChanged(int value);
+
+    void on_blueslider_valueChanged(int value);
+
+    void on_hslider_valueChanged(int value);
+
+    void on_sslider_valueChanged(int value);
+
+    void on_vslider_valueChanged(int value);
+
+    void on_reset_clicked();
+
+
+
+
+
+    void on_box_clicked();
+
+    void on_gaussian_clicked();
+
+
+
+    void on_medianslider_valueChanged(int value);
+
+    void on_bislider_valueChanged(int value);
+
+
+
+
+
+    void on_sharpening_clicked();
+
+private:
+    Ui::MainWindow *ui;
+};
+#endif // MAINWINDOW_H
+
+
