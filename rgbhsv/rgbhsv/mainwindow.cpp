@@ -1,3 +1,5 @@
+// For "last step" function, use a Mat vector and push the image into the vector whenever a change is made.
+// Whenver "last step" button is pressed, return the last elememnt and delete it in the vector
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "opencv2/opencv.hpp"
