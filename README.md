@@ -7,4 +7,4 @@ Calculator supporting addition, subtraction, multiplication, division and reset
 ## rgbhsv/rgbhsv
 Image editor whose functions include RGB, HSV and filter adjustments
 ## Face Tracker.py
-A program to control a servo motor and camera to detect and follow moving human face
+A program to control servo motor and camera to detect and follow moving human face
