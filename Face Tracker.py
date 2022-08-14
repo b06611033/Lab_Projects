@@ -12,8 +12,8 @@ face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)
-servo1 = GPIO.PWM(11,50)
-servo1.start(0)
+servo = GPIO.PWM(11,50)
+servo.start(0)
 while True:
     _, frame=cap.read()
     gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
@@ -30,26 +30,26 @@ while True:
     
     if key==27:   # Esc key to stop
         break
-    if face_mid < frame_center - 15:   # keep face in the center
-        degree += 5                    # if face is within +- 15 cols, tracker doesn't need to move, prevents jittering
-    if face_mid > frame_center + 15:
-        degree -= 5
     if degree >= 180:   # keep degree between 0-180 (limit of servo motor angle)
         degree = 175
-    if degree <= 0:
+    elif degree <= 0:
         degree = 5
+    if face_mid < frame_center - 15:   # keep face in the center
+        degree += 5                    # if face is within +- 15 cols, tracker doesn't need to move, prevents jittering
+    elif face_mid > frame_center + 15:
+        degree -= 5
 
-    servo1.ChangeDutyCycle(2+(degree/18))  # servo motor control
+    servo.ChangeDutyCycle(2+(degree/18))  # servo motor control
     time.sleep(0.2)
-    servo1.ChangeDutyCycle(0)
+    servo.ChangeDutyCycle(0)
 
-print('stopped')
+print('finished')
 
 degree = 90
-servo1.ChangeDutyCycle(2+(degree/18))  # turn back to initial angle
+servo.ChangeDutyCycle(2+(degree/18))  # turn back to initial angle
 time.sleep(0.015)
-servo1.ChangeDutyCycle(0)
-servo1.stop()
+servo.ChangeDutyCycle(0)
+servo.stop()
 GPIO.cleanup()
 cv2.destroyAllWindows()  
 cap.release()
