@@ -1,5 +1,5 @@
 # Lab_Projects
-**Projects in the Computer Vision lab**
+**Projects of Computer Vision lab**
 ## RiceDetection
 Detect the number of rice in any given image
 ## calculator
