@@ -1,9 +1,9 @@
 # Lab_Projects
-**Projects of Computer Vision lab**
+**Projects of Computer Vision Lab**
 ## RiceDetection
 Detect the number of rice in any given image
 ## calculator
-Calculator supporting addition, subtraction, multiplication, division and reset
+A calculator supporting addition, subtraction, multiplication, division and reset
 ## rgbhsv/rgbhsv
 Image editor whose functions include RGB, HSV and filter adjustments
 ## Face Tracker.py
